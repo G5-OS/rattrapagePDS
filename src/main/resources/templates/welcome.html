@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PGM</title>
+    <link th:href="@{css/bootstrap.css}" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css" />
+</head>
+
+<body>
+<script defer type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script defer type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/kt-2.5.0/r-2.2.2/datatables.min.js"></script>
+
+<div class="container">
+    <h2 class="alert-heading" style="text-align: center">
+        <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+            <input hidden="true" type="submit" value="Sign Out"/>
+        </form>
+        Welcome <span th:utext="${client.fname}" /> | <a href="javascript: document.logoutForm.submit()" role="menuitem" style="color: #a71d2a"> Logout </a>
+    </h2>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align: center">Suggestion Campaign Menu</h1>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="http://localhost:8090/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Menu Suggestion Campaign</li>
+        </ol>
+    </div>
+    <a th:href="@{/launchCampaign}"> Launch a Suggestion Campaign  </a> </br>
+    <a th:href="@{/listCampaign}"> Suggestion Campaign List </a>
+</div>
+</body>
+</html>

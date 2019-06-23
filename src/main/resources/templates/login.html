@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PGM</title>
+    <link th:href="@{css/bootstrap.css}" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="container">
+    <form method="POST" th:action="@{/logPerson}" th:object="${client}" class="form-signin">
+        <h2 class="form-heading" style="text-align: center">Log in</h2>
+
+        <div class="form-group">
+            <input name="username" type="text" class="form-control" placeholder="Mail" autofocus="true" th:field="*{mail}"/>
+            <input name="password" type="password" class="form-control" placeholder="Password" th:field="*{password}"/>
+            <div class="form-signinhas-error" th:if="${loginError}" th:utext="${loginError}"/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script th:src="@{bootstrap.min.js}"></script>
+</body>
+</html>

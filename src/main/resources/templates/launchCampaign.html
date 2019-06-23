@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PGM</title>
+    <link th:href="@{css/bootstrap.css}" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css" />
+</head>
+
+<body>
+<script defer type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script defer type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/kt-2.5.0/r-2.2.2/datatables.min.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align: center">Launch a new suggestion campaign</h1>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="http://localhost:8090/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">LaunchSuggestionCampaign</li>
+        </ol>
+    </div>
+
+    <div class="container-fluid">
+        <form id="form" autocomplete="off" class="form-inline" action="#" th:action="@{/suggestionCampaign}" th:object="${suggestionCampaign}" method="post">
+            <div class="form-group">
+                <label for="wording">Wording </label>
+                <input type="text" class="form-control mx-sm-3" id="wording" name="wording" placeholder="enter the campaign wording">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="promotionalMessage">Promotional Message </label>
+                <input type="text" class="form-control mx-sm-3" id="promotionalMessage" name="promotionalMessage" th:field="*{promotionalMessage}" placeholder="enter the promotional message">
+            </div>
+            <div class="form-group">
+                <label for="description">Description </label>
+                <input type="text" class="form-control input-group-lg" id="description" name="description" th:field="*{description}" placeholder="enter the campaign's description ">
+            </div> <br/>
+            <div class="form-group">
+                <label for="launchDate">Launch Date </label>
+                <input type="text" class="form-control mx-3" id="launchDate" name="launchDate" th:field="*{launchDate}" placeholder="dd/mm/yyyy">
+            </div>
+            <div class="form-group">
+                <label for="endDate">End Date </label>
+                <input type="text" class="form-control mx-3" id="endDate" name="endDate" th:field="*{endDate}" placeholder="dd/mm/yyyy">
+            </div>
+            <input type="submit" value="Create"/> </br>
+        </form>
+        <br>
+    </div>
+
+    <!--
+        <table id="resultProduct"  class="table table-hover table-bordered table-striped">
+            <thead>
+            <tr class="table-default">
+
+                <th>Name</th>
+                <th>Type</th>
+                <th>Choice</th>
+            </tr>
+            </thead>
+        </table>
+
+        <table id="resultStore"  class="table table-hover table-bordered table-striped">
+            <thead>
+            <tr class="table-default">
+
+                <th>Name</th>
+                <th>Category</th>
+                <th>Choice</th>
+            </tr>
+            </thead>
+        </table>-->
+</div>
+
+</body>
+
+</html>
