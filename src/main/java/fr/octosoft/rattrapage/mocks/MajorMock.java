@@ -1,5 +1,9 @@
 package fr.octosoft.rattrapage.mocks;
 
+import fr.octosoft.rattrapage.daos.ClientDAO;
+import fr.octosoft.rattrapage.daos.ProductDAO;
+import fr.octosoft.rattrapage.daos.StoreDAO;
+import fr.octosoft.rattrapage.daos.TransactionDAO;
 import fr.octosoft.rattrapage.entities.Client;
 import fr.octosoft.rattrapage.entities.Product;
 import fr.octosoft.rattrapage.entities.Store;
@@ -13,13 +17,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class MajorMock {
 
     @Autowired
-    StoreService storeService;
+    StoreDAO storeDAO;
+
     @Autowired
-    ClientService clientService;
+    ClientDAO clientDAO;
+
     @Autowired
-    ProductService productService;
+    ProductDAO productDAO;
+
     @Autowired
-    TransactionService transactionService;
+    TransactionDAO transactionDAO;
+
+    @Autowired
+    StoreService storeService = new StoreService(storeDAO);
+    ClientService clientService = new ClientService(clientDAO);
+    ProductService productService = new ProductService(productDAO);
+    TransactionService transactionService = new TransactionService(transactionDAO);
 
     public void createStores() {
         storeService.createStore(new Store("Zara", "mode"));

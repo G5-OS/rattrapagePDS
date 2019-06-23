@@ -3,6 +3,7 @@ package fr.octosoft.rattrapage.controllers;
 import fr.octosoft.rattrapage.entities.Client;
 import fr.octosoft.rattrapage.mocks.MajorMock;
 import fr.octosoft.rattrapage.services.ClientService;
+import fr.octosoft.rattrapage.services.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class IndexController {
+
+    @Autowired
+    StoreService storeService;
 
     @Autowired
     ClientService clientService;

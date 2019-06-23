@@ -9,9 +9,6 @@ import java.util.stream.Collectors;
 @Service
 public class StoreService {
 
-    public StoreService() {
-    }
-
     @Autowired
     private StoreDAO storeDAO;
 
